@@ -1,0 +1,788 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Java Codes</title>
+    <!--This is Google Arvo Font and font awesome-->
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="js/MyJs.js"></script>
+    <script scr="js/reload.js" type="text/JavaScript"></script>
+   
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/desert.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body >
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="images/toplogo.png" alt="FAFORE" title="FAFORE"></a>
+        </div>
+        <div id='navbar' class="collapse navbar-collapse">
+		<ul id="fl" class="nav navbar-nav navbar-right">			   
+		   <li class='dropdown'>
+       <a class="dropdown-toggle" data-toggle="dropdown" href='#'><span>PROJECTS</span></a>
+		      <ul class="dropdown-menu" role = "menu">
+		         <li><a href='java.html'><span>JAVA CODES</span></a></li>                   
+		         <li><a href='sparc.html'><span>SPARC</span></a></li>
+		         <li><a href='c.html'><span>C</span></a></li>
+		      </ul>          
+		   </li>		   		   	   
+		</ul>
+		</div>
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+      <!-- #BeginEditable "first%20edit" -->
+      <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">Java Codes</h1>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+            <p>A text file named input should be created in the same directory as the project file </p><br>
+            <!-- HTML generated using hilite.me --><div id = "anagram" style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.io.*</span><span style="color: #333333">;</span>
+            <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Scanner</span><span style="color: #333333">;</span>
+            <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Arrays</span><span style="color: #333333">;</span>
+
+            <span style="color: #888888">/* Name: Ayomitunde Fafore</span>
+            <span style="color: #888888"> * </span>
+            <span style="color: #888888"> * </span>
+            <span style="color: #888888"> */</span>
+
+            <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Anagram</span> <span style="color: #333333">{</span>
+
+            <span style="color: #888888">/*IOException is being used to throw java.io.IOException</span>
+            <span style="color: #888888"> * </span>
+            <span style="color: #888888"> */</span>
+            <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">main</span><span style="color: #333333">(</span>String<span style="color: #333333">[]</span> args<span style="color: #333333">)</span> <span style="color: #008800; font-weight: bold">throws</span> IOException <span style="color: #333333">{</span>
+              
+              <span style="color: #888888">// Declaration of variables</span>
+              <span style="color: #333399; font-weight: bold">int</span> CountWords <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> <span style="color: #888888">// CountWords will be used to check if the number of words is greater than 50</span>
+              <span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+              
+              String <span style="color: #333333">[]</span> Arrs <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> String<span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">10</span><span style="color: #333333">];</span> <span style="color: #888888">// Create an array that can hold 10 objects</span>
+
+              <span style="color: #888888">// create scanner object to prompt user for question</span>
+              
+              Scanner question <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Scanner<span style="color: #333333">(</span>System<span style="color: #333333">.</span><span style="color: #0000CC">in</span><span style="color: #333333">);</span>
+              
+              System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">print</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Please enter name of the Input file: &quot;</span><span style="color: #333333">);</span>
+              String CallFile <span style="color: #333333">=</span> question<span style="color: #333333">.</span><span style="color: #0000CC">nextLine</span><span style="color: #333333">();</span>
+              
+              <span style="color: #008800; font-weight: bold">try</span> <span style="color: #333333">{</span>
+                Scanner InputFile <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Scanner<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> File<span style="color: #333333">(</span>CallFile<span style="color: #333333">));</span> <span style="color: #888888">// This creates a scanner object that scans the input file</span>
+                
+                <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span>InputFile<span style="color: #333333">.</span><span style="color: #0000CC">hasNext</span><span style="color: #333333">())</span> <span style="color: #333333">{</span>
+                  String Words <span style="color: #333333">=</span> InputFile<span style="color: #333333">.</span><span style="color: #0000CC">nextLine</span><span style="color: #333333">();</span> <span style="color: #888888">// this scans the next line</span>
+                  Arrs <span style="color: #333333">=</span> Words<span style="color: #333333">.</span><span style="color: #0000CC">split</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;\\s+&quot;</span><span style="color: #333333">);</span> <span style="color: #888888">// removes white space so it does not count towards arrays</span>
+                  <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span>String o <span style="color: #333333">:</span> Arrs<span style="color: #333333">){</span>
+                    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>o<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()&amp;</span>gt <span style="color: #0000DD; font-weight: bold">12</span><span style="color: #333333">)</span> <span style="color: #333333">{</span> <span style="color: #888888">// used to make sure that it does not count more than 12 char words</span>
+                      CountWords<span style="color: #333333">--;</span> 
+                    <span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #333333">{</span>
+                    <span style="color: #888888">// Sets array size by counting number of words in the file</span>
+                    CountWords<span style="color: #333333">++;</span>
+                    <span style="color: #333333">}</span>
+                  <span style="color: #333333">}</span>
+                <span style="color: #333333">}</span>
+                InputFile<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span> <span style="color: #888888">// This closes the file</span>
+              <span style="color: #333333">}</span>
+              <span style="color: #008800; font-weight: bold">catch</span><span style="color: #333333">(</span>FileNotFoundException e<span style="color: #333333">)</span> <span style="color: #888888">// this is the file not found exception handling</span>
+              <span style="color: #333333">{</span>
+                System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">print</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;The file you have entered does not exist, please try again!&quot;</span><span style="color: #333333">);</span>
+                System<span style="color: #333333">.</span><span style="color: #0000CC">exit</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">);</span> <span style="color: #888888">// exit program</span>
+              <span style="color: #333333">}</span>
+              
+              <span style="color: #888888">// Check if the words in the file is more than 50</span>
+              <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>CountWords <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">50</span><span style="color: #333333">)</span>
+              <span style="color: #333333">{</span>
+                System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;There are more than 50 words in the input file&quot;</span><span style="color: #333333">);</span>
+                System<span style="color: #333333">.</span><span style="color: #0000CC">exit</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">);</span> <span style="color: #888888">// exit the program</span>
+              <span style="color: #333333">}</span>
+              <span style="color: #888888">// check if there are no words in the file</span>
+                  <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>CountWords <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span>
+                  <span style="color: #333333">{</span>
+                    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Your input file is empty&quot;</span><span style="color: #333333">);</span>
+                    System<span style="color: #333333">.</span><span style="color: #0000CC">exit</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">);</span> <span style="color: #888888">// exit program</span>
+                  <span style="color: #333333">}</span>
+              <span style="color: #888888">/* We are using this original and signature array so we can scan through</span>
+            <span style="color: #888888">  * the words and sort them to find the anagram of words</span>
+            <span style="color: #888888">  */</span>
+              
+              String <span style="color: #333333">[]</span> OriginalWord <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> String<span style="color: #333333">[</span>CountWords<span style="color: #333333">];</span>
+              String <span style="color: #333333">[]</span> Signature <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> String<span style="color: #333333">[</span>CountWords<span style="color: #333333">];</span>
+              
+              Scanner InputFile <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Scanner<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> File<span style="color: #333333">(</span>CallFile<span style="color: #333333">));</span>
+              
+              <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>InputFile<span style="color: #333333">.</span><span style="color: #0000CC">hasNext</span><span style="color: #333333">()){</span>
+                String Words <span style="color: #333333">=</span> InputFile<span style="color: #333333">.</span><span style="color: #0000CC">nextLine</span><span style="color: #333333">();</span> 
+                Arrs <span style="color: #333333">=</span> Words<span style="color: #333333">.</span><span style="color: #0000CC">split</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;\\s+&quot;</span><span style="color: #333333">);</span> <span style="color: #888888">// remove any white space so it does not count towards array</span>
+                <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span>String o <span style="color: #333333">:</span> Arrs<span style="color: #333333">){</span>
+                  <span style="color: #888888">/* if the char words is greater than 12, ignore it and </span>
+            <span style="color: #888888">      * set the original array to the new length</span>
+            <span style="color: #888888">      * </span>
+            <span style="color: #888888">      */</span>
+                  <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>o<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()&amp;</span>gt12<span style="color: #333333">)</span> 
+                    <span style="color: #008800; font-weight: bold">continue</span><span style="color: #333333">;</span>
+                  OriginalWord<span style="color: #333333">[</span>i<span style="color: #333333">++]</span> <span style="color: #333333">=</span> o<span style="color: #333333">;</span>
+                <span style="color: #333333">}</span>
+              <span style="color: #333333">}</span>
+              <span style="color: #888888">// close file</span>
+              InputFile<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span>
+              
+              
+              <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> v <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> v <span style="color: #333333">&amp;</span>lt OriginalWord<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;</span> v<span style="color: #333333">++)</span>
+              <span style="color: #333333">{</span>
+                String StrippedWords <span style="color: #333333">=</span> OriginalWord<span style="color: #333333">[</span>v<span style="color: #333333">].</span><span style="color: #0000CC">replaceAll</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;\\W&quot;</span><span style="color: #333333">,</span> <span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">).</span><span style="color: #0000CC">toLowerCase</span><span style="color: #333333">();</span> <span style="color: #888888">// removes punctuations from the words</span>
+                Signature<span style="color: #333333">[</span>v<span style="color: #333333">]</span> <span style="color: #333333">=</span> StrippedWords<span style="color: #333333">;</span>
+                <span style="color: #333399; font-weight: bold">char</span><span style="color: #333333">[]</span> B <span style="color: #333333">=</span> Signature<span style="color: #333333">[</span>v<span style="color: #333333">].</span><span style="color: #0000CC">toCharArray</span><span style="color: #333333">();</span>
+                Arrays<span style="color: #333333">.</span><span style="color: #0000CC">sort</span><span style="color: #333333">(</span>B<span style="color: #333333">);</span><span style="color: #888888">// sort the words by characters</span>
+                String wordSort <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> String<span style="color: #333333">(</span>B<span style="color: #333333">);</span> <span style="color: #888888">// converts the characters to a string object</span>
+                Signature<span style="color: #333333">[</span>v<span style="color: #333333">]</span> <span style="color: #333333">=</span> wordSort<span style="color: #333333">;</span> <span style="color: #888888">// The sorted words are sorted in the signature array</span>
+                
+              <span style="color: #333333">}</span>
+              <span style="color: #888888">// Create two loops to sort signature and the original word array </span>
+              <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> v <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> v<span style="color: #333333">&amp;</span>ltSignature<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;</span> v<span style="color: #333333">++){</span>
+                <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> o <span style="color: #333333">=</span> v<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span> o<span style="color: #333333">&lt;</span>Signature<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;</span> o<span style="color: #333333">++)</span>
+                <span style="color: #333333">{</span>
+                  <span style="color: #888888">// use compareTo to compare both strings of arrays</span>
+                  <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>Signature<span style="color: #333333">[</span>v<span style="color: #333333">].</span><span style="color: #0000CC">compareTo</span><span style="color: #333333">(</span>Signature<span style="color: #333333">[</span>o<span style="color: #333333">])==</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">)</span>
+                  <span style="color: #333333">{</span>
+                    String hold <span style="color: #333333">=</span> Signature<span style="color: #333333">[</span>v<span style="color: #333333">];</span>
+                    String holder <span style="color: #333333">=</span> OriginalWord<span style="color: #333333">[</span>v<span style="color: #333333">];</span>
+                    Signature<span style="color: #333333">[</span>v<span style="color: #333333">]</span> <span style="color: #333333">=</span> Signature<span style="color: #333333">[</span>o<span style="color: #333333">];</span>
+                    OriginalWord<span style="color: #333333">[</span>v<span style="color: #333333">]</span> <span style="color: #333333">=</span> OriginalWord<span style="color: #333333">[</span>o<span style="color: #333333">];</span>
+                    Signature<span style="color: #333333">[</span>o<span style="color: #333333">]</span> <span style="color: #333333">=</span> hold<span style="color: #333333">;</span>
+                    OriginalWord<span style="color: #333333">[</span>o<span style="color: #333333">]</span> <span style="color: #333333">=</span> holder<span style="color: #333333">;</span>
+                  <span style="color: #333333">}</span>
+                <span style="color: #333333">}</span>
+                
+              <span style="color: #333333">}</span>
+              <span style="color: #888888">// Create a new file output.txt in which words will be stored</span>
+              PrintWriter OutFile <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> PrintWriter<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;output.txt&quot;</span><span style="color: #333333">);</span>
+              <span style="color: #333399; font-weight: bold">int</span> v <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+              
+              <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span>i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>Signature<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;)</span>
+              <span style="color: #333333">{</span>
+                <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>Signature<span style="color: #333333">[</span>i<span style="color: #333333">].</span><span style="color: #0000CC">equals</span><span style="color: #333333">(</span>Signature<span style="color: #333333">[</span>v<span style="color: #333333">]))</span>
+                <span style="color: #333333">{</span>
+                  OutFile<span style="color: #333333">.</span><span style="color: #0000CC">print</span><span style="color: #333333">(</span>OriginalWord<span style="color: #333333">[</span>i<span style="color: #333333">]+</span> <span style="background-color: #fff0f0">&quot; &quot;</span><span style="color: #333333">);</span> <span style="color: #888888">// print onto output file</span>
+                  System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">print</span><span style="color: #333333">(</span>OriginalWord<span style="color: #333333">[</span>i<span style="color: #333333">]+</span> <span style="background-color: #fff0f0">&quot; &quot;</span><span style="color: #333333">);</span><span style="color: #888888">// print onto screen</span>
+                  i<span style="color: #333333">++;</span> <span style="color: #888888">//increment i</span>
+                <span style="color: #333333">}</span>
+                <span style="color: #008800; font-weight: bold">else</span>
+                <span style="color: #333333">{</span>
+                  OutFile<span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">();</span>
+                  System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">();</span>
+                  v <span style="color: #333333">=</span> i<span style="color: #333333">;</span>
+                <span style="color: #333333">}</span>
+              <span style="color: #333333">}</span>
+              OutFile<span style="color: #333333">.</span><span style="color: #0000CC">close</span><span style="color: #333333">();</span> <span style="color: #888888">// close the output file</span>
+            <span style="color: #333333">}</span>
+
+            <span style="color: #333333">}</span>
+            </pre></div><br>
+
+
+          <!-- HTML generated using hilite.me --><div id = "fibonacci" style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.math.BigInteger</span><span style="color: #333333">;</span>
+          <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.text.DecimalFormat</span><span style="color: #333333">;</span>
+          <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.text.NumberFormat</span><span style="color: #333333">;</span>
+          <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Scanner</span><span style="color: #333333">;</span>
+
+
+          <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Fibonacci</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">int</span> <span style="color: #0066BB; font-weight: bold">fib</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> a<span style="color: #333333">){</span>
+              <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>a <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">||</span> a <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">){</span>
+                <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+              <span style="color: #333333">}</span>
+              <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0066BB; font-weight: bold">fib</span><span style="color: #333333">(</span>a<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">)</span> <span style="color: #333333">+</span> fib<span style="color: #333333">(</span>a<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">);</span>
+            <span style="color: #333333">}</span>
+            
+            <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">main</span><span style="color: #333333">(</span>String<span style="color: #333333">[]</span> args<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+                 <span style="color: #333399; font-weight: bold">int</span> number <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">40</span><span style="color: #333333">;</span>
+                    BigInteger a <span style="color: #333333">=</span> BigInteger<span style="color: #333333">.</span><span style="color: #0000CC">ZERO</span><span style="color: #333333">;</span>
+                    BigInteger b <span style="color: #333333">=</span> BigInteger<span style="color: #333333">.</span><span style="color: #0000CC">ONE</span><span style="color: #333333">;</span>
+                    <span style="color: #333399; font-weight: bold">long</span> startTime <span style="color: #333333">=</span> System<span style="color: #333333">.</span><span style="color: #0000CC">currentTimeMillis</span><span style="color: #333333">();</span>
+                    BigInteger c <span style="color: #333333">=</span> BigInteger<span style="color: #333333">.</span><span style="color: #0000CC">ONE</span><span style="color: #333333">;</span>
+                    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i<span style="color: #333333">&lt;</span>number<span style="color: #333333">;</span>i<span style="color: #333333">++){</span>
+                        a<span style="color: #333333">=</span>b<span style="color: #333333">;</span>
+                        b<span style="color: #333333">=</span>c<span style="color: #333333">;</span>
+                        c <span style="color: #333333">=</span> a<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>b<span style="color: #333333">);</span>
+                        System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;---Iterative---&quot;</span><span style="color: #333333">+</span>a<span style="color: #333333">);</span>
+                    <span style="color: #333333">}</span>
+                    <span style="color: #333399; font-weight: bold">long</span> endTime <span style="color: #333333">=</span> System<span style="color: #333333">.</span><span style="color: #0000CC">currentTimeMillis</span><span style="color: #333333">();</span>
+                NumberFormat formatter <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> DecimalFormat<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;#0.00000&quot;</span><span style="color: #333333">);</span>
+                System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">print</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;\nExecution time for iterative is &quot;</span> <span style="color: #333333">+</span> formatter<span style="color: #333333">.</span><span style="color: #0000CC">format</span><span style="color: #333333">((</span>endTime <span style="color: #333333">-</span> startTime<span style="color: #333333">)</span> <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">1000</span>d<span style="color: #333333">)</span> <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; seconds\n&quot;</span><span style="color: #333333">);</span>
+                
+                <span style="color: #333399; font-weight: bold">long</span> sTime <span style="color: #333333">=</span> System<span style="color: #333333">.</span><span style="color: #0000CC">currentTimeMillis</span><span style="color: #333333">();</span>
+                    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> number<span style="color: #333333">;</span> i<span style="color: #333333">++)</span>
+                    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;----recursive----&quot;</span><span style="color: #333333">+</span>fib<span style="color: #333333">(</span>i<span style="color: #333333">));</span>
+                    <span style="color: #333399; font-weight: bold">long</span> eTime <span style="color: #333333">=</span> System<span style="color: #333333">.</span><span style="color: #0000CC">currentTimeMillis</span><span style="color: #333333">();</span>
+                NumberFormat formater <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> DecimalFormat<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;#0.00000&quot;</span><span style="color: #333333">);</span>
+                System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">print</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;\nExecution time for recursion is &quot;</span> <span style="color: #333333">+</span> formatter<span style="color: #333333">.</span><span style="color: #0000CC">format</span><span style="color: #333333">((</span>endTime <span style="color: #333333">-</span> startTime<span style="color: #333333">)</span> <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">1000</span>d<span style="color: #333333">)</span> <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; seconds\n&quot;</span><span style="color: #333333">);</span>
+                    
+              
+
+            <span style="color: #333333">}</span>
+
+          <span style="color: #333333">}</span>
+          </pre></div><br>
+
+
+	
+	<!-- HTML generated using hilite.me --><div id= "binarytree" style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Arrays</span><span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Scanner</span><span style="color: #333333">;</span>
+
+
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">BinarySearchTree</span> <span style="color: #333333">{</span>
+  <span style="color: #008800; font-weight: bold">private</span> <span style="color: #333399; font-weight: bold">int</span> data<span style="color: #333333">;</span>
+  <span style="color: #008800; font-weight: bold">private</span> BinarySearchTree left<span style="color: #333333">;</span>
+  <span style="color: #008800; font-weight: bold">private</span> BinarySearchTree right<span style="color: #333333">;</span>
+  
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">BinarySearchTree</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> num<span style="color: #333333">){</span>
+    <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">data</span> <span style="color: #333333">=</span> num<span style="color: #333333">;</span> <span style="color: #888888">// set data to num</span>
+    <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">left</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span> <span style="color: #888888">// left and right doesn&#39;t have a value when we begin operation</span>
+    <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">right</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">;</span>
+  <span style="color: #333333">}</span>
+  
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">addNode</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> num<span style="color: #333333">){</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>num <span style="color: #333333">&lt;</span> <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">data</span><span style="color: #333333">){</span>
+      <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">left</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+        <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">.</span><span style="color: #0000CC">addNode</span><span style="color: #333333">(</span>num<span style="color: #333333">);</span>
+        System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Inserting &quot;</span><span style="color: #333333">+</span>num<span style="color: #333333">+</span><span style="background-color: #fff0f0">&quot; to the left of &quot;</span><span style="color: #333333">+</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">data</span><span style="color: #333333">);</span>
+      <span style="color: #333333">}</span>
+      <span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">left</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> BinarySearchTree<span style="color: #333333">(</span>num<span style="color: #333333">);</span>
+        System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Inserting &quot;</span><span style="color: #333333">+</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">data</span><span style="color: #333333">);</span>
+      <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+      <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">right</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+        <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">.</span><span style="color: #0000CC">addNode</span><span style="color: #333333">(</span>num<span style="color: #333333">);</span>
+        System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Inserting &quot;</span><span style="color: #333333">+</span>num<span style="color: #333333">+</span><span style="background-color: #fff0f0">&quot; to the right of &quot;</span><span style="color: #333333">+</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">data</span><span style="color: #333333">);</span>
+      <span style="color: #333333">}</span><span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+        <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">right</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> BinarySearchTree<span style="color: #333333">(</span>num<span style="color: #333333">);</span>
+        System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Inserting &quot;</span><span style="color: #333333">+</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">data</span><span style="color: #333333">);</span>
+      <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+  <span style="color: #333333">}</span>
+  
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">preOrder</span><span style="color: #333333">(){</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Printing out in PreOrder &quot;</span><span style="color: #333333">+</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">data</span><span style="color: #333333">);</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">left</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+      <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">.</span><span style="color: #0000CC">preOrder</span><span style="color: #333333">();</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+      <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">.</span><span style="color: #0000CC">preOrder</span><span style="color: #333333">();</span>
+    <span style="color: #333333">}</span>
+  <span style="color: #333333">}</span>
+  
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">InOrder</span><span style="color: #333333">(){</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">left</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+      <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">.</span><span style="color: #0000CC">InOrder</span><span style="color: #333333">();</span>
+    <span style="color: #333333">}</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Printing out in Order &quot;</span><span style="color: #333333">+</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">data</span><span style="color: #333333">);</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">right</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+      <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">.</span><span style="color: #0000CC">InOrder</span><span style="color: #333333">();</span>
+    <span style="color: #333333">}</span>
+  <span style="color: #333333">}</span>
+  
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">PostOrder</span><span style="color: #333333">(){</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">left</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+      <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">left</span><span style="color: #333333">.</span><span style="color: #0000CC">PostOrder</span><span style="color: #333333">();</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">right</span> <span style="color: #333333">!=</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+      <span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">right</span><span style="color: #333333">.</span><span style="color: #0000CC">PostOrder</span><span style="color: #333333">();</span>
+    <span style="color: #333333">}</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Printing out in Post Order &quot;</span><span style="color: #333333">+</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">.</span><span style="color: #0000CC">data</span><span style="color: #333333">);</span>
+  <span style="color: #333333">}</span>
+
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">main</span><span style="color: #333333">(</span>String<span style="color: #333333">[]</span> args<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    BinarySearchTree tree <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> BinarySearchTree<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">20</span><span style="color: #333333">);</span>
+    <span style="color: #333399; font-weight: bold">int</span> <span style="color: #333333">[]</span> nums <span style="color: #333333">=</span> <span style="color: #333333">{</span><span style="color: #0000DD; font-weight: bold">15</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">200</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">25</span><span style="color: #333333">,</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">5</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">100</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">20</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">12</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">126</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">1000</span><span style="color: #333333">,</span> <span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">150</span><span style="color: #333333">};</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">:</span> nums<span style="color: #333333">){</span>
+      tree<span style="color: #333333">.</span><span style="color: #0000CC">addNode</span><span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #888888">//Insert();</span>
+    tree<span style="color: #333333">.</span><span style="color: #0000CC">InOrder</span><span style="color: #333333">();</span>
+    tree<span style="color: #333333">.</span><span style="color: #0000CC">PostOrder</span><span style="color: #333333">();</span>
+    tree<span style="color: #333333">.</span><span style="color: #0000CC">preOrder</span><span style="color: #333333">();</span>  
+    
+    
+
+  <span style="color: #333333">}</span>
+
+<span style="color: #333333">}</span>
+</pre></div><br>
+
+
+
+	<!-- HTML generated using hilite.me --><div id = "phonedirectory" style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Scanner</span><span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">PhoneDirectory</span> <span style="color: #333333">{</span>
+
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">main</span><span style="color: #333333">(</span>String<span style="color: #333333">[]</span> args<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    Scanner sc <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Scanner<span style="color: #333333">(</span>System<span style="color: #333333">.</span><span style="color: #0000CC">in</span><span style="color: #333333">);</span>
+    PhoneRecord<span style="color: #333333">[]</span> records <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> PhoneRecord<span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">100</span><span style="color: #333333">];</span>
+    <span style="color: #333399; font-weight: bold">int</span> numRecords <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+
+    <span style="color: #008800; font-weight: bold">while</span> <span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #888888">// Display list of commands</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Phone directory commands:\n&quot;</span> <span style="color: #333333">+</span>
+        <span style="background-color: #fff0f0">&quot;  a - Add a new phone number\n&quot;</span> <span style="color: #333333">+</span>
+        <span style="background-color: #fff0f0">&quot;  f - Find a phone number\n&quot;</span> <span style="color: #333333">+</span>
+        <span style="background-color: #fff0f0">&quot;  d - Delete all phone records&quot;</span> <span style="color: #333333">+</span>
+        <span style="background-color: #fff0f0">&quot;  q - Quit\n&quot;</span><span style="color: #333333">);</span>
+
+    <span style="color: #888888">// Read and execute commands</span>
+    
+
+      <span style="color: #888888">// Prompt user to enter a command</span>
+      System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">print</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Enter command (a, f, d or q): &quot;</span><span style="color: #333333">);</span>
+      String command <span style="color: #333333">=</span> sc<span style="color: #333333">.</span><span style="color: #0000CC">nextLine</span><span style="color: #333333">().</span><span style="color: #0000CC">trim</span><span style="color: #333333">();</span>
+
+      <span style="color: #888888">// Determine whether command is &quot;a&quot;, &quot;f&quot;, &quot;q&quot;, or</span>
+      <span style="color: #888888">// illegal; execute command if legal.</span>
+      <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>command<span style="color: #333333">.</span><span style="color: #0000CC">equalsIgnoreCase</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;a&quot;</span><span style="color: #333333">))</span> <span style="color: #333333">{</span>
+
+        <span style="color: #888888">// Command is &quot;a&quot;. Prompt user for name and number,</span>
+        <span style="color: #888888">// then create a phone record and store it in the</span>
+        <span style="color: #888888">// database.</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>numRecords <span style="color: #333333">&amp;</span>lt<span style="color: #333333">;</span> records<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">)</span> <span style="color: #333333">{</span>
+          System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">print</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Enter new name: &quot;</span><span style="color: #333333">);</span>
+          String name <span style="color: #333333">=</span> sc<span style="color: #333333">.</span><span style="color: #0000CC">nextLine</span><span style="color: #333333">().</span><span style="color: #0000CC">trim</span><span style="color: #333333">();</span>
+          System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">print</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Enter new phone number: &quot;</span><span style="color: #333333">);</span>
+          String number <span style="color: #333333">=</span> sc<span style="color: #333333">.</span><span style="color: #0000CC">nextLine</span><span style="color: #333333">().</span><span style="color: #0000CC">trim</span><span style="color: #333333">();</span>
+          records<span style="color: #333333">[</span>numRecords<span style="color: #333333">]</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> PhoneRecord<span style="color: #333333">(</span>name<span style="color: #333333">,</span> number<span style="color: #333333">);</span>
+
+          numRecords<span style="color: #333333">++;</span> <span style="color: #888888">// increases number of records</span>
+          
+        <span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span>
+          System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Database is full&quot;</span><span style="color: #333333">);</span> <span style="color: #888888">// if directory is full </span>
+
+      <span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>command<span style="color: #333333">.</span><span style="color: #0000CC">equalsIgnoreCase</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;f&quot;</span><span style="color: #333333">))</span> <span style="color: #333333">{</span>
+
+        <span style="color: #888888">// Command is &quot;f&quot;. Prompt user for search key.</span>
+        <span style="color: #888888">// Search the database for records whose names begin</span>
+        <span style="color: #888888">// with the search key. Print these names and the</span>
+        <span style="color: #888888">// corresponding phone numbers.</span>
+        System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">print</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Enter name to look up: &quot;</span><span style="color: #333333">);</span>
+        String key <span style="color: #333333">=</span> sc<span style="color: #333333">.</span><span style="color: #0000CC">nextLine</span><span style="color: #333333">().</span><span style="color: #0000CC">trim</span><span style="color: #333333">().</span><span style="color: #0000CC">toLowerCase</span><span style="color: #333333">();</span>
+        <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&amp;</span>lt<span style="color: #333333">;</span> numRecords<span style="color: #333333">;</span> i<span style="color: #333333">++)</span> <span style="color: #333333">{</span>
+          String name <span style="color: #333333">=</span> records<span style="color: #333333">[</span>i<span style="color: #333333">].</span><span style="color: #0000CC">getName</span><span style="color: #333333">().</span><span style="color: #0000CC">toLowerCase</span><span style="color: #333333">();</span>
+          <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>name<span style="color: #333333">.</span><span style="color: #0000CC">startsWith</span><span style="color: #333333">(</span>key<span style="color: #333333">))</span>
+            System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span>records<span style="color: #333333">[</span>i<span style="color: #333333">].</span><span style="color: #0000CC">getName</span><span style="color: #333333">()</span> <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; &quot;</span> <span style="color: #333333">+</span> 
+                records<span style="color: #333333">[</span>i<span style="color: #333333">].</span><span style="color: #0000CC">getNumber</span><span style="color: #333333">());</span>
+        <span style="color: #333333">}</span>
+      <span style="color: #333333">}</span>
+      <span style="color: #008800; font-weight: bold">else</span> <span style="color: #0066BB; font-weight: bold">if</span> <span style="color: #333333">(</span>command<span style="color: #333333">.</span><span style="color: #0000CC">equalsIgnoreCase</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;d&quot;</span><span style="color: #333333">)){</span>
+        <span style="color: #888888">// Command is &quot;d&quot;. Prompt user for a search key.</span>
+        <span style="color: #888888">// Search the database for records whose names begin</span>
+        <span style="color: #888888">// with the search key. Deletes the records for the name searched.</span>
+        System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Enter a name to delete all phone records: &quot;</span><span style="color: #333333">);</span>
+        String delete <span style="color: #333333">=</span> sc<span style="color: #333333">.</span><span style="color: #0000CC">nextLine</span><span style="color: #333333">().</span><span style="color: #0000CC">trim</span><span style="color: #333333">().</span><span style="color: #0000CC">toLowerCase</span><span style="color: #333333">();</span>
+        <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>delete <span style="color: #333333">==</span> <span style="color: #008800; font-weight: bold">null</span><span style="color: #333333">){</span>
+          <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        <span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&amp;</span>lt<span style="color: #333333">;</span> numRecords<span style="color: #333333">;)</span> <span style="color: #333333">{</span>
+          String name <span style="color: #333333">=</span> records<span style="color: #333333">[</span>i<span style="color: #333333">].</span><span style="color: #0000CC">getName</span><span style="color: #333333">().</span><span style="color: #0000CC">toLowerCase</span><span style="color: #333333">();</span>       
+          <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>name<span style="color: #333333">.</span><span style="color: #0000CC">startsWith</span><span style="color: #333333">(</span>delete<span style="color: #333333">)){</span>
+            records<span style="color: #333333">[</span>i<span style="color: #333333">]</span> <span style="color: #333333">=</span> records<span style="color: #333333">[--</span>numRecords<span style="color: #333333">];</span>
+            System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Records deleted for &quot;</span><span style="color: #333333">+</span> name<span style="color: #333333">);</span>
+            <span style="color: #008800; font-weight: bold">break</span><span style="color: #333333">;</span>
+          <span style="color: #333333">}</span>
+          <span style="color: #008800; font-weight: bold">else</span><span style="color: #333333">{</span>
+            i<span style="color: #333333">++;</span>
+          <span style="color: #333333">}</span>
+            
+          
+        <span style="color: #333333">}</span>
+
+      <span style="color: #333333">}</span>
+
+      <span style="color: #008800; font-weight: bold">else</span> <span style="color: #0066BB; font-weight: bold">if</span> <span style="color: #333333">(</span>command<span style="color: #333333">.</span><span style="color: #0000CC">equalsIgnoreCase</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;q&quot;</span><span style="color: #333333">))</span> <span style="color: #333333">{</span>
+        <span style="color: #888888">// Command is &quot;q&quot;. Terminate program.</span>
+        <span style="color: #008800; font-weight: bold">return</span><span style="color: #333333">;</span>
+
+      <span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">else</span> <span style="color: #333333">{</span>
+        <span style="color: #888888">// Command is illegal. Display error message.</span>
+        System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Command was not recognized; &quot;</span> <span style="color: #333333">+</span>
+            <span style="background-color: #fff0f0">&quot;please enter only a, f, d or q.&quot;</span><span style="color: #333333">);</span>
+      <span style="color: #333333">}</span>
+
+      System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">();</span>
+    <span style="color: #333333">}</span>
+  <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+
+<span style="color: #888888">// Represents a record containing a name and a phone number</span>
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">PhoneRecord</span> <span style="color: #333333">{</span>
+  <span style="color: #008800; font-weight: bold">private</span> String name<span style="color: #333333">;</span>
+  <span style="color: #008800; font-weight: bold">private</span> String number<span style="color: #333333">;</span>
+
+  <span style="color: #888888">// Constructor</span>
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #0066BB; font-weight: bold">PhoneRecord</span><span style="color: #333333">(</span>String personName<span style="color: #333333">,</span> String phoneNumber<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    name <span style="color: #333333">=</span> personName<span style="color: #333333">;</span>                       
+    number <span style="color: #333333">=</span> phoneNumber<span style="color: #333333">;</span>
+  <span style="color: #333333">}</span>
+
+  <span style="color: #888888">// Returns the name stored in the record</span>
+  <span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">getName</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">return</span> name<span style="color: #333333">;</span>
+  <span style="color: #333333">}</span>
+
+  
+  <span style="color: #888888">// Returns the phone number stored in the record</span>
+  <span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">getNumber</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">return</span> number<span style="color: #333333">;</span>
+
+
+
+  <span style="color: #333333">}</span>
+
+<span style="color: #333333">}</span>
+</pre></div><br>
+
+         <!-- HTML generated using hilite.me --><div id="Euler1" style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">package</span> Euler<span style="color: #333333">;</span>
+
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.text.DecimalFormat</span><span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.text.NumberFormat</span><span style="color: #333333">;</span>
+
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Euler1</span> <span style="color: #333333">{</span>
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">muls</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> n<span style="color: #333333">){</span>
+    <span style="color: #333399; font-weight: bold">boolean</span> <span style="color: #333333">[]</span> divs <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #333399; font-weight: bold">boolean</span><span style="color: #333333">[</span>n<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">];</span>
+    <span style="color: #333399; font-weight: bold">int</span> sum <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">;</span>i <span style="color: #333333">&lt;</span> n<span style="color: #333333">;</span> i<span style="color: #333333">+=</span><span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">){</span>
+      divs<span style="color: #333333">[</span>i<span style="color: #333333">]</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> j <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">5</span><span style="color: #333333">;</span> j <span style="color: #333333">&lt;</span> n<span style="color: #333333">;</span> j<span style="color: #333333">+=</span><span style="color: #0000DD; font-weight: bold">5</span><span style="color: #333333">){</span>
+      divs<span style="color: #333333">[</span>j<span style="color: #333333">]</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">;</span>i <span style="color: #333333">&lt;</span> n<span style="color: #333333">;</span> i<span style="color: #333333">++){</span>
+      <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>divs<span style="color: #333333">[</span>i<span style="color: #333333">]){</span>
+        sum<span style="color: #333333">+=</span>i<span style="color: #333333">;</span>
+      <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span>sum<span style="color: #333333">);</span>
+    
+  <span style="color: #333333">}</span>
+
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">main</span><span style="color: #333333">(</span>String <span style="color: #333333">[]</span> args<span style="color: #333333">){</span>
+        <span style="color: #888888">// simple way, through brute force</span>
+    <span style="color: #333399; font-weight: bold">int</span> sum <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span> max <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">100000000</span><span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">long</span> startTime <span style="color: #333333">=</span> System<span style="color: #333333">.</span><span style="color: #0000CC">currentTimeMillis</span><span style="color: #333333">();</span>
+    muls<span style="color: #333333">(</span>max<span style="color: #333333">);</span>
+    <span style="color: #333399; font-weight: bold">long</span> endTime <span style="color: #333333">=</span> System<span style="color: #333333">.</span><span style="color: #0000CC">currentTimeMillis</span><span style="color: #333333">();</span>
+    NumberFormat formater <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> DecimalFormat<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;#0.00000&quot;</span><span style="color: #333333">);</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">print</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;\nExecution time for func is &quot;</span> <span style="color: #333333">+</span> formater<span style="color: #333333">.</span><span style="color: #0000CC">format</span><span style="color: #333333">((</span>endTime <span style="color: #333333">-</span> startTime<span style="color: #333333">)</span> <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">1000</span>d<span style="color: #333333">)</span> <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; seconds\n&quot;</span><span style="color: #333333">);</span>
+    <span style="color: #333399; font-weight: bold">long</span> sTime <span style="color: #333333">=</span> System<span style="color: #333333">.</span><span style="color: #0000CC">currentTimeMillis</span><span style="color: #333333">();</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> max<span style="color: #333333">;</span> i<span style="color: #333333">++){</span>
+      <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>i <span style="color: #333333">%</span> <span style="color: #0000DD; font-weight: bold">3</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #333333">||</span> i <span style="color: #333333">%</span> <span style="color: #0000DD; font-weight: bold">5</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span>
+        sum<span style="color: #333333">+=</span>i<span style="color: #333333">;</span>
+      <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span>sum<span style="color: #333333">);</span>
+    <span style="color: #333399; font-weight: bold">long</span> eTime <span style="color: #333333">=</span> System<span style="color: #333333">.</span><span style="color: #0000CC">currentTimeMillis</span><span style="color: #333333">();</span>
+    NumberFormat formatter <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> DecimalFormat<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;#0.00000&quot;</span><span style="color: #333333">);</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">print</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;\nExecution time for norm is &quot;</span> <span style="color: #333333">+</span> formater<span style="color: #333333">.</span><span style="color: #0000CC">format</span><span style="color: #333333">((</span>eTime <span style="color: #333333">-</span> sTime<span style="color: #333333">)</span> <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">1000</span>d<span style="color: #333333">)</span> <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; seconds\n&quot;</span><span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+
+<span style="color: #333333">}</span>
+</pre></div><br>
+
+
+       <!-- HTML generated using hilite.me --><div id="Euler2" style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.text.DecimalFormat</span><span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.text.NumberFormat</span><span style="color: #333333">;</span>
+
+
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Proj2</span> <span style="color: #333333">{</span>
+
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">main</span><span style="color: #333333">(</span>String<span style="color: #333333">[]</span> args<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+  <span style="color: #333399; font-weight: bold">long</span> startTime <span style="color: #333333">=</span> System<span style="color: #333333">.</span><span style="color: #0000CC">currentTimeMillis</span><span style="color: #333333">();</span>
+  <span style="color: #333399; font-weight: bold">long</span> fib1 <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+  <span style="color: #333399; font-weight: bold">long</span> fib2 <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span>
+  <span style="color: #333399; font-weight: bold">long</span> result <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+  <span style="color: #333399; font-weight: bold">long</span> summed <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+  <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>result <span style="color: #333333">&amp;</span>lt<span style="color: #333333">;</span> <span style="color: #0000DD; font-weight: bold">4000000</span><span style="color: #333333">){</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>result <span style="color: #333333">%</span> <span style="color: #0000DD; font-weight: bold">2</span> <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span>
+      summed <span style="color: #333333">+=</span>result<span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+    result <span style="color: #333333">=</span> fib1 <span style="color: #333333">+</span> fib2<span style="color: #333333">;</span>
+    fib2 <span style="color: #333333">=</span> fib1<span style="color: #333333">;</span>
+    fib1 <span style="color: #333333">=</span> result<span style="color: #333333">;</span>
+  <span style="color: #333333">}</span>
+  <span style="color: #333399; font-weight: bold">long</span> endTime <span style="color: #333333">=</span> System<span style="color: #333333">.</span><span style="color: #0000CC">currentTimeMillis</span><span style="color: #333333">();</span>
+  NumberFormat formatter <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> DecimalFormat<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;#0.00000&quot;</span><span style="color: #333333">);</span>
+  System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">print</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;\nExecution time is &quot;</span> <span style="color: #333333">+</span> formatter<span style="color: #333333">.</span><span style="color: #0000CC">format</span><span style="color: #333333">((</span>endTime <span style="color: #333333">-</span> startTime<span style="color: #333333">)</span> <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">1000</span>d<span style="color: #333333">)</span> <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; seconds\n&quot;</span><span style="color: #333333">);</span>
+  System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span>summed<span style="color: #333333">);</span>
+<span style="color: #333333">}</span>
+
+<span style="color: #333333">}</span>
+</pre></div><br>
+
+
+         <!-- HTML generated using hilite.me --><div id="Areaofcircle" style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Scanner</span><span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AreaofCircle</span> <span style="color: #333333">{</span>
+  
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">circumference</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> r<span style="color: #333333">){</span>
+    <span style="color: #333399; font-weight: bold">double</span> Circumference <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">2</span> <span style="color: #333333">*</span> <span style="color: #333333">(</span>Math<span style="color: #333333">.</span><span style="color: #0000CC">PI</span> <span style="color: #333333">*</span> r<span style="color: #333333">);</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Circumference is : &quot;</span><span style="color: #333333">+</span>Circumference<span style="color: #333333">);</span>
+  <span style="color: #333333">}</span>
+  
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">Area</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">double</span> c<span style="color: #333333">){</span>
+    <span style="color: #333399; font-weight: bold">double</span> Area <span style="color: #333333">=</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">PI</span> <span style="color: #333333">*</span> <span style="color: #333333">(</span>c <span style="color: #333333">*</span> c<span style="color: #333333">);</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Area is: &quot;</span><span style="color: #333333">+</span>Area<span style="color: #333333">);</span>
+  <span style="color: #333333">}</span>
+
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">main</span><span style="color: #333333">(</span>String<span style="color: #333333">[]</span> args<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    
+    Scanner sc <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Scanner<span style="color: #333333">(</span>System<span style="color: #333333">.</span><span style="color: #0000CC">in</span><span style="color: #333333">);</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Enter radius: &quot;</span><span style="color: #333333">);</span>
+    <span style="color: #333399; font-weight: bold">double</span> radius <span style="color: #333333">=</span> sc<span style="color: #333333">.</span><span style="color: #0000CC">nextDouble</span><span style="color: #333333">();</span>
+    
+    circumference<span style="color: #333333">(</span>radius<span style="color: #333333">);</span>
+    Area<span style="color: #333333">(</span>radius<span style="color: #333333">);</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Radius is : &quot;</span><span style="color: #333333">+</span>radius<span style="color: #333333">);</span>
+    
+
+  <span style="color: #333333">}</span>
+
+<span style="color: #333333">}</span>
+</pre></div><br>
+
+
+         <!-- HTML generated using hilite.me --><div id="Euler4" style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Project4</span> <span style="color: #333333">{</span>
+  
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">boolean</span> <span style="color: #0066BB; font-weight: bold">isPal</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> num<span style="color: #333333">){</span>
+    <span style="color: #333399; font-weight: bold">int</span> pal <span style="color: #333333">=</span> num<span style="color: #333333">;</span> <span style="color: #888888">// 101</span>
+    <span style="color: #333399; font-weight: bold">int</span> reverse <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+    <span style="color: #333399; font-weight: bold">int</span> remainder<span style="color: #333333">;</span>
+    
+    <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>num <span style="color: #333333">!=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span> 
+      remainder <span style="color: #333333">=</span> num <span style="color: #333333">%</span><span style="color: #0000DD; font-weight: bold">10</span><span style="color: #333333">;</span> <span style="color: #888888">// = 101%10 = 1|0|1</span>
+      reverse <span style="color: #333333">=</span> reverse <span style="color: #333333">*</span> <span style="color: #0000DD; font-weight: bold">10</span> <span style="color: #333333">+</span> remainder<span style="color: #333333">;</span> <span style="color: #888888">// = 1|10|101</span>
+      num <span style="color: #333333">/=</span> <span style="color: #0000DD; font-weight: bold">10</span><span style="color: #333333">;</span> <span style="color: #888888">// 10|1|0</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>reverse <span style="color: #333333">==</span> pal<span style="color: #333333">){</span>
+      <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+  <span style="color: #333333">}</span>
+
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">main</span><span style="color: #333333">(</span>String<span style="color: #333333">[]</span> args<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #333399; font-weight: bold">int</span> max <span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">100</span><span style="color: #333333">;</span> i <span style="color: #333333">&amp;</span>lt <span style="color: #0000DD; font-weight: bold">1000</span><span style="color: #333333">;</span> i<span style="color: #333333">++){</span>
+      <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> j <span style="color: #333333">=</span> i <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span> j <span style="color: #333333">&amp;</span>lt <span style="color: #0000DD; font-weight: bold">1000</span><span style="color: #333333">;</span> j<span style="color: #333333">++){</span>
+        <span style="color: #333399; font-weight: bold">int</span> ans <span style="color: #333333">=</span> j<span style="color: #333333">*</span>i<span style="color: #333333">;</span>       
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>isPal<span style="color: #333333">(</span>ans<span style="color: #333333">)){</span>
+          <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>ans <span style="color: #333333">&gt;</span> max<span style="color: #333333">)</span>
+            max <span style="color: #333333">=</span> ans<span style="color: #333333">;</span>          
+        <span style="color: #333333">}</span>
+      <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span>max<span style="color: #333333">);</span>
+
+  <span style="color: #333333">}</span>
+
+<span style="color: #333333">}</span>
+</pre></div><br>
+
+
+
+          <!-- HTML generated using hilite.me --><div id="perm" style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">package</span> files<span style="color: #333333">;</span>
+          <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.util.Scanner</span><span style="color: #333333">;</span>
+
+          <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Permutation</span> <span style="color: #333333">{</span>
+            
+            <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">permString</span><span style="color: #333333">(</span>String bString<span style="color: #333333">,</span> String eString<span style="color: #333333">){</span>
+              <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>eString<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">()</span> <span style="color: #333333">&lt;=</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">)</span>
+                System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span>bString <span style="color: #333333">+</span> eString<span style="color: #333333">);</span>
+              <span style="color: #008800; font-weight: bold">else</span>
+                <span style="color: #0066BB; font-weight: bold">for</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> eString<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">();</span> i<span style="color: #333333">++){</span>
+                  <span style="color: #008800; font-weight: bold">try</span><span style="color: #333333">{</span>
+                    String nString <span style="color: #333333">=</span> eString<span style="color: #333333">.</span><span style="color: #0000CC">substring</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">,</span> i<span style="color: #333333">)</span> <span style="color: #333333">+</span> eString<span style="color: #333333">.</span><span style="color: #0000CC">substring</span><span style="color: #333333">(</span>i <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">);</span>
+                    permString<span style="color: #333333">(</span>bString <span style="color: #333333">+</span> eString<span style="color: #333333">.</span><span style="color: #0000CC">charAt</span><span style="color: #333333">(</span>i<span style="color: #333333">),</span> nString<span style="color: #333333">);</span>
+                  <span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">catch</span> <span style="color: #333333">(</span>StringIndexOutOfBoundsException exception<span style="color: #333333">){</span>
+                    exception<span style="color: #333333">.</span><span style="color: #0000CC">printStackTrace</span><span style="color: #333333">();</span>
+                  <span style="color: #333333">}</span>
+                <span style="color: #333333">}</span>
+            <span style="color: #333333">}</span>
+
+            <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">main</span><span style="color: #333333">(</span>String<span style="color: #333333">[]</span> args<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+              Scanner sc <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Scanner<span style="color: #333333">(</span>System<span style="color: #333333">.</span><span style="color: #0000CC">in</span><span style="color: #333333">);</span>
+              System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">print</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Please enter a string to find it&#39;s permutations: &quot;</span><span style="color: #333333">);</span>
+              String input <span style="color: #333333">=</span> sc<span style="color: #333333">.</span><span style="color: #0000CC">nextLine</span><span style="color: #333333">();</span>
+              permString<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;&quot;</span><span style="color: #333333">,</span>input<span style="color: #333333">);</span>
+
+            <span style="color: #333333">}</span>
+
+          <span style="color: #333333">}</span>
+          </pre></div><br>
+
+
+          <!-- HTML generated using hilite.me --><div id = "Euler16" style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">package</span> Euler<span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.math.BigInteger</span><span style="color: #333333">;</span>
+
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Euler16</span> <span style="color: #333333">{</span>
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">addNums</span><span style="color: #333333">(</span>BigInteger n<span style="color: #333333">){</span>
+    BigInteger sum <span style="color: #333333">=</span> BigInteger<span style="color: #333333">.</span><span style="color: #0000CC">ZERO</span><span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">while</span><span style="color: #333333">(</span>n<span style="color: #333333">.</span><span style="color: #0000CC">compareTo</span><span style="color: #333333">(</span>BigInteger<span style="color: #333333">.</span><span style="color: #0000CC">ZERO</span><span style="color: #333333">)</span> <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">){</span>
+      BigInteger mod <span style="color: #333333">=</span> n<span style="color: #333333">.</span><span style="color: #0000CC">mod</span><span style="color: #333333">(</span>BigInteger<span style="color: #333333">.</span><span style="color: #0000CC">TEN</span><span style="color: #333333">);</span>
+      sum <span style="color: #333333">=</span> sum<span style="color: #333333">.</span><span style="color: #0000CC">add</span><span style="color: #333333">(</span>mod<span style="color: #333333">);</span>
+      n <span style="color: #333333">=</span> n<span style="color: #333333">.</span><span style="color: #0000CC">divide</span><span style="color: #333333">(</span>BigInteger<span style="color: #333333">.</span><span style="color: #0000CC">TEN</span><span style="color: #333333">);</span>
+    <span style="color: #333333">}</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span>sum<span style="color: #333333">);</span>
+  <span style="color: #333333">}</span>
+
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">main</span><span style="color: #333333">(</span>String<span style="color: #333333">[]</span> args<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #888888">// TODO Auto-generated method stub</span>
+    <span style="color: #333399; font-weight: bold">long</span> begin <span style="color: #333333">=</span> System<span style="color: #333333">.</span><span style="color: #0000CC">currentTimeMillis</span><span style="color: #333333">();</span>
+    BigInteger n <span style="color: #333333">=</span> BigInteger<span style="color: #333333">.</span><span style="color: #0000CC">valueOf</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">).</span><span style="color: #0000CC">pow</span><span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">1000</span><span style="color: #333333">);</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span>n<span style="color: #333333">);</span>
+    addNums<span style="color: #333333">(</span>n<span style="color: #333333">);</span>
+    <span style="color: #333399; font-weight: bold">long</span> end <span style="color: #333333">=</span> System<span style="color: #333333">.</span><span style="color: #0000CC">currentTimeMillis</span><span style="color: #333333">();</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span>end<span style="color: #333333">-</span>begin <span style="color: #333333">+</span><span style="background-color: #fff0f0">&quot; ms&quot;</span><span style="color: #333333">);</span>
+
+  <span style="color: #333333">}</span>
+
+<span style="color: #333333">}</span>
+</pre></div><br>
+
+<!-- HTML generated using hilite.me --><div id = "Euler9" style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">package</span> Euler<span style="color: #333333">;</span>
+
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.text.DecimalFormat</span><span style="color: #333333">;</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">java.text.NumberFormat</span><span style="color: #333333">;</span>
+
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Euler9</span> <span style="color: #333333">{</span>
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">find</span><span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> ans<span style="color: #333333">){</span>
+    <span style="color: #333399; font-weight: bold">int</span> a<span style="color: #333333">,</span>b<span style="color: #333333">,</span>c<span style="color: #333333">;</span> <span style="color: #888888">// declare var</span>
+    <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span>a <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">;</span> a <span style="color: #333333">&lt;</span> ans<span style="color: #333333">;</span> a<span style="color: #333333">++){</span>
+      <span style="color: #008800; font-weight: bold">for</span><span style="color: #333333">(</span>b <span style="color: #333333">=</span> a<span style="color: #333333">;</span> b <span style="color: #333333">&lt;</span> ans<span style="color: #333333">;</span> b<span style="color: #333333">++){</span>
+        c <span style="color: #333333">=</span> ans <span style="color: #333333">-</span> a <span style="color: #333333">-</span> b<span style="color: #333333">;</span> <span style="color: #888888">// set c = 1000 - a - b</span>
+        <span style="color: #888888">// we check condition we want.. a&lt;b&lt;c... a^2 + b^2 = c^2</span>
+        <span style="color: #888888">// multiply them... and that&#39;s our answer.</span>
+        <span style="color: #008800; font-weight: bold">if</span><span style="color: #333333">(</span>a <span style="color: #333333">&lt;</span> b <span style="color: #333333">&amp;&amp;</span> b <span style="color: #333333">&lt;</span> c <span style="color: #333333">&amp;&amp;</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">pow</span><span style="color: #333333">(</span>a<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">)</span> <span style="color: #333333">+</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">pow</span><span style="color: #333333">(</span>b<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">)</span> <span style="color: #333333">==</span> Math<span style="color: #333333">.</span><span style="color: #0000CC">pow</span><span style="color: #333333">(</span>c<span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">)){</span> 
+          System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span>a <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; &quot;</span><span style="color: #333333">+</span> b <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; &quot;</span><span style="color: #333333">+</span> c<span style="color: #333333">);</span>  
+          <span style="color: #333399; font-weight: bold">int</span> product <span style="color: #333333">=</span> a<span style="color: #333333">*</span>b<span style="color: #333333">*</span>c<span style="color: #333333">;</span>
+          System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">println</span><span style="color: #333333">(</span>product<span style="color: #333333">);</span>
+        <span style="color: #333333">}</span>
+      <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>   
+    
+  <span style="color: #333333">}</span>
+
+  <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">static</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">main</span><span style="color: #333333">(</span>String<span style="color: #333333">[]</span> args<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+    <span style="color: #333399; font-weight: bold">long</span> startTime <span style="color: #333333">=</span> System<span style="color: #333333">.</span><span style="color: #0000CC">currentTimeMillis</span><span style="color: #333333">();</span>
+    <span style="color: #333399; font-weight: bold">int</span> number <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1000</span><span style="color: #333333">;</span>
+    find<span style="color: #333333">(</span>number<span style="color: #333333">);</span>
+    <span style="color: #333399; font-weight: bold">long</span> endTime <span style="color: #333333">=</span> System<span style="color: #333333">.</span><span style="color: #0000CC">currentTimeMillis</span><span style="color: #333333">();</span>
+    NumberFormat formatter <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> DecimalFormat<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;#0.00000&quot;</span><span style="color: #333333">);</span>
+    System<span style="color: #333333">.</span><span style="color: #0000CC">out</span><span style="color: #333333">.</span><span style="color: #0000CC">print</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;\nExecution time is &quot;</span> <span style="color: #333333">+</span> formatter<span style="color: #333333">.</span><span style="color: #0000CC">format</span><span style="color: #333333">((</span>endTime <span style="color: #333333">-</span> startTime<span style="color: #333333">)</span> <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">1000</span>d<span style="color: #333333">)</span> <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; seconds\n&quot;</span><span style="color: #333333">);</span> 
+
+  <span style="color: #333333">}</span>
+
+<span style="color: #333333">}</span>
+</pre></div>
+
+
+
+
+		
+          <!--nav>
+            <ul class="pager">
+              <li><a href="#">Previous</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+          </nav-->
+
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>About</h4>
+            <p>This is a section for java codes, some of the projects were done in school and others were just practiced during my free time</p>
+          </div>
+          <div class="sidebar-module">
+            <h4>Browse Codes</h4>
+            <ol class="list-unstyled">
+              <li><a href="#anagram">Anagram</a></li>
+              <li><a href="#fibonacci">Fibonacci Sequence</a></li>
+              <li><a href="#binarytree">Binary Tree</a></li>
+              <li><a href="#phonedirectory">Phone Directory</a></li>   
+              <li><a href="#Euler1">Euler 1</a></li>    
+              <li><a href="#Euler2">Euler 2</a></li> 
+              <li><a href="#Euler4">Euler 4</a></li> 
+              <li><a href="#Euler9">Euler 9</a></li>
+              <li><a href="#Euler16">Euler 16</a></li>
+              <li><a href="#Areaofcircle">Area of a Circle</a></li>      
+              <li><a href="#perm">String Permutation</a></li>   
+            </ol>
+          </div>
+          <!--div class="sidebar-module">
+            <h4>Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ol>
+          </div-->
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+		<p style="text-align:center">
+        <a href="#">Back to top</a>
+      </p>
+      <footer>
+      <div class="container">
+        <p><img src="images/foot.png" alt="Footer"></p>
+        
+        </div>
+      </footer>
+    
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    
+  </body>
+</html>

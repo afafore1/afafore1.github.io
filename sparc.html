@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Sparc Codes</title>
+    <!--This is Google Arvo Font and font awesome-->
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <script src="script.js"></script>
+   <script type="text/javascript">
+$(document).ready(function(){    
+    //Check if the current URL contains '#'
+    if(document.URL.indexOf("#")==-1){
+        // Set the URL to whatever it was plus "#".
+        url = document.URL+"#";
+        location = "#";
+
+        //Reload the page
+        location.reload(true);
+    }
+});
+</script>
+    
+    
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/desert.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+ <body >
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="images/toplogo.png" alt="FAFORE" title="FAFORE"></a>
+        </div>
+        <div id='navbar' class="collapse navbar-collapse">
+		<ul id="fl" class="nav navbar-nav navbar-right">			   
+		   <li class='dropdown'>
+       <a class="dropdown-toggle" data-toggle="dropdown" href='#'><span>PROJECTS</span></a>
+		      <ul class="dropdown-menu" role = "menu">
+		         <li><a href='java.html'><span>JAVA CODES</span></a></li>                  
+		         <li><a href='sparc.html'><span>SPARC</span></a></li>
+		         <li><a href='c.html'><span>C</span></a></li>
+		      </ul>          
+		   </li>		   		   	   
+		</ul>
+		</div>
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+      <!-- #BeginEditable "first%20edit" -->
+      <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">Sparc Codes</h1>
+        <p class="lead blog-description">Please Reload page if code does not display.</p>
+        <p class="lead blog-description">All codes have been tested and should run perfectly.</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div id="scalc">
+            <h2 class="blog-post-title">Simple Calculation</h2>
+            <!--p class="blog-post-meta">Anagram Project by <a href="#">Ayo</a></p-->
+<div>
+            <code>
+            <pre class="prettyprint">
+! y = x^3 - 14x^2 + 56x - 64
+define(x_r, l0)
+define(y_r, l1)
+define(a0,14)
+define(a1,56)
+define(a2,64)
+
+.global main
+main:
+        save %sp, -96, %sp
+
+        mov 3, %x_r
+        mov %x_r, %o0
+        call .mul
+        mov %x_r, %o1
+        call .mul
+        mov %x_r, %o1
+        mov %o0, %y_r !mov x^3 into %y_r
+
+clr %x_r
+        mov 3, %x_r
+        mov %x_r, %o0
+        call .mul
+        mov %x_r, %o1
+        call .mul
+        mov a0, %o1 ! 14x^2
+        sub %y_r, %o0, %y_r ! x^3-14x^2 and move result in %y_r
+
+        clr %x_r
+        mov 3, %x_r
+        mov %x_r, %o0
+        call .mul
+        mov a1, %o1 !56x
+        add %y_r, %o0, %y_r ! x^3-14x^2+56x and move result in %y_r
+
+        sub %y_r, a2, %y_r ! x^3-14x^2+56x-64 and answer in %y_r
+
+        mov 1, %g1
+        ta 0
+
+            </pre>
+            </code>
+            </div>
+          </div><!-- /.blog-post -->
+
+          <div id="xcube">
+            <h2 class="cubex">X^3</h2>
+            <!--p class="blog-post-meta">by <a href="#">Ayo</a></p-->
+            <div id="xcube">
+            <code>
+             <pre class="prettyprint">
+define(x_r, l0)
+define(y_r, l1)
+
+.global main
+main:
+        save %sp, -96, %sp
+
+        mov 3, %x_r
+
+        mov %x_r, %o1
+        call .mul
+        mov %x_r, %o2
+        call .mul
+        mov %x_r, %o2
+        call .mul
+
+        mov %o1, %y_r
+
+mov 1, %g1
+ta 0
+
+            </pre>
+            </code>
+            </div>
+            
+          </div><!-- /.blog-post -->
+
+		<div id="maxfind">
+            <h2 class="blog-post-title">Max Find</h2>
+            <!--p class="blog-post-meta">by <a href="#">Ayo</a></p-->
+            <div>
+            <code>
+             <pre class="prettyprint">
+arr_offset = -5*4
+max_offset = arr_offset - 4
+size_int = 4
+
+.global main
+main:
+        save %sp, (-92+max_offset)&-8,%sp
+        mov 2, %o0
+        st %o0, [%fp + arr_offset]
+        mov 1, %o0
+        st %o0, [%fp + arr_offset + 1*size_int]
+        mov 8, %o0
+        st %o0, [%fp + arr_offset + 2*size_int]
+        mov 16, %o0
+        st %o0, [%fp + arr_offset + 3*size_int]
+        mov 21, %o0
+        st %o0, [%fp + arr_offset + 4*size_int]
+
+        ld [%fp + arr_offset], %l0
+
+        mov 4, %l1
+        mov 0, %l2
+        ba looptest
+        cmp %l1, %l2
+
+        forloop:
+        ld [%fp + %l2], %o0
+        cmp %o0, %l0
+        bl looptest
+        deccc %l1 !index = index + 1
+        mov %o0, %l0
+
+        looptest:
+        bge, a forloop
+        dec size_int, %l2
+
+        st %l0, [%fp + max_offset]
+        mov 1, %g1
+        ta 0
+
+				  </pre>
+				  </code>
+            </div>
+            
+          </div><!-- /.blog-post -->
+	
+	
+			<div id="swap">
+            <h2 class="blog-post-title">Swap Subroutine</h2>
+            <!--p class="blog-post-meta">by <a href="#">Ayo</a></p-->
+            <div>
+            <code>
+             <pre class="prettyprint">
+.global swap
+swap:
+save %sp, -96, %sp
+mov %i0, %l0
+mov %i1, %i0
+mov %l0, %i1
+ret
+restore
+
+.global main
+main:
+save %sp, -96, %sp
+mov 5, %o0
+mov 7, %o1
+call swap
+nop
+mov 1, %g1
+ta 0
+
+
+            </pre>
+            </code>
+            </div>
+            
+          </div><!-- /.blog-post -->
+
+
+	
+		
+          <!--nav>
+            <ul class="pager">
+              <li><a href="#">Previous</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+          </nav-->
+
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>About</h4>
+            <p>This is a section for sparc codes, some of the projects were done in school and others were just practiced during my free time</p>
+          </div>
+          <div class="sidebar-module">
+            <h4>Browse Codes</h4>
+            <ol class="list-unstyled">
+              <li><a href="#scalc">Quadratic</a></li>
+              <li><a href="#xcube">How to Cube</a></li>
+              <li><a href="#maxfind">Find Maximum using Stack</a></li>
+              <li><a href="#swap">Using Subroutine</a></li>      
+            </ol>
+          </div>
+          <!--div class="sidebar-module">
+            <h4>Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ol>
+          </div-->
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+		<p style="text-align:center">
+        <a href="#">Back to top</a>
+      </p>
+      <footer>
+      <div class="container">
+        <p><img src="images/foot.png" alt="Footer"></p>
+        
+        </div>
+      </footer>
+    
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    
+  </body>
+</html>
